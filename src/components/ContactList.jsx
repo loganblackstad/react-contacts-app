@@ -19,7 +19,22 @@ export default class ContactList extends Component {
     this.setState({ contacts: updatedContactList })
   }
 
+  editContact = (userName) => {
+    const updatedContactList = this.state.contacts.filter((contact) => { return contact.login.username !== userName });
+    this.setState({ contacts: updatedContactList })
+  }
+
   generateContact = () => {
+    fetch('https://randomuser.me/api/?results=1')
+      .then(response => response.json())
+      .then(data => {
+        const newContacts = [...this.state.contacts, data.results[0]];
+        this.setState({ contacts: newContacts });
+        // console.log(data.results[0]);
+      })
+  }
+
+  createContact = () => {
     fetch('https://randomuser.me/api/?results=1')
       .then(response => response.json())
       .then(data => {
@@ -39,7 +54,11 @@ export default class ContactList extends Component {
   render() {
     return (
       <>
+        <br />
         <Button type="button" onClick={this.generateContact}>Generate User</Button>
+        <br />
+        <br />
+        <Button type="button" onClick={this.createContact}>Create User</Button>
         <div className="ContactList" >
           {this.state.contacts.map((contact, index) => <Contact contact={contact} key={index} dContact={this.deleteContact.bind(this)} />)}
         </div>

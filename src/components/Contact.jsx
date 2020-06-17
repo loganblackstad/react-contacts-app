@@ -23,14 +23,14 @@ export default class Contact extends Component {
     console.log(this.props.contact.login.username);
   }
 
-  editContact = () => { };
 
   render() {
 
     var divStyle = {
       width: '200px',
       marginLeft: '5px',
-      border: '1px solid darkblue',
+      // border: '1px solid darkblue',
+      textAlign: 'center',
     };
 
 
@@ -46,26 +46,26 @@ export default class Contact extends Component {
       <Container>
         <Row className="justify-content-md-center">
           <Col xs={12} sm={12} md={12} lg={12}>
-            <div className="b-btn sandbox">
+            <div className="b-btn">
               <Button type="button" style={divStyle} onClick={this.deleteContact}>Delete</Button>
               <Button type="button" style={divStyle} onClick={this.editContact}>Edit</Button>
             </div>
           </Col>
         </Row>
         <Row className="justify-content-md-center sandbox">
-          <Col xs={2} sm={2} md={2} lg={2} className="sandbox" style={divStyle}><p>name:</p></Col>
+          <Col xs={2} sm={2} md={2} lg={2} className="sandbox"><p>name:</p></Col>
           <Col xs={2} sm={2} md={2} lg={2} className="sandbox">{this.props.contact.name.first}</Col>
         </Row>
         <Row className="justify-content-md-center sandbox">
-          <Col xs={2} sm={2} md={2} lg={2} className="sandbox" style={divStyle}><p>username:</p></Col>
+          <Col xs={2} sm={2} md={2} lg={2} className="sandbox"><p>username:</p></Col>
           <Col xs={2} sm={2} md={2} lg={2} className="sandbox">{this.props.contact.login.username}</Col>
         </Row>
         <Row className="justify-content-md-center sandbox">
-          <Col xs={2} sm={2} md={2} lg={2} className="sandbox" style={divStyle}><p>email:</p></Col>
+          <Col xs={2} sm={2} md={2} lg={2} className="sandbox"><p>email:</p></Col>
           <Col xs={2} sm={2} md={2} lg={2} className="sandbox">{this.props.contact.email}</Col>
         </Row>
         <Row className="justify-content-md-center sandbox">
-          <Col xs={2} sm={2} md={2} lg={2} className="sandbox" style={divStyle}><p>phone:</p></Col>
+          <Col xs={2} sm={2} md={2} lg={2} className="sandbox"><p>phone:</p></Col>
           <Col xs={2} sm={2} md={2} lg={2} className="sandbox">{this.props.contact.phone}</Col>
         </Row>
       </Container >

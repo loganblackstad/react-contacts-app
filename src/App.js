@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import ContactList from './components/ContactList';
+import ContactForm from './components/ContactForm';
 import 'bootstrap/dist/css/bootstrap.css'
 import { Button, Col, Row, Form, } from 'react-bootstrap'
 
@@ -21,6 +22,7 @@ class App extends Component {
         <header className="App-header">
           <h1>Contacts App</h1>
         </header>
+        <ContactForm onSubmit={this.onNewContact} updateContact={this.state.editMe} />
         <ContactList />
       </div>
     );

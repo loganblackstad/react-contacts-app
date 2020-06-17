@@ -3,6 +3,7 @@
 }
 
 .sandbox {
-  border: 1px solid lightblue;
-  border-radius: 3px;
+  /* border: 1px solid lightblue; */
+  /* border-radius: 3px; */
+  text-align: left;
 }
